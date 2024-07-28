@@ -6,14 +6,6 @@ import { Role } from "@prisma/client";
 
 export default withAuth(
   function middleware(req) {
-    if (
-      !process.env.ACCESS_TOKEN_SECRET &&
-      req.nextUrl.pathname.startsWith("/api")
-    )
-      return new NextResponse("Unauthorized!", {
-        status: 500,
-      });
-
     const url = req.nextUrl.clone();
     if (req.nextUrl.pathname.startsWith("/login/verify")) {
       if (!req.nextauth.token?.user.lastPasswordChange) {
