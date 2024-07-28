@@ -125,9 +125,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    require("tailwindcss-bg-patterns"),
-    require("@tailwindcss/typography"),
-  ],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 };
